@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="BOSC Community Library is a community-driven academic project for sharing open learning resources and collaborative knowledge."
+  >
+  <title>BOSC Community Library</title>
+  <script>
+    document.documentElement.classList.add("js");
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">BOSC</span>
+        <span class="brand-text">Community Library</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        data-nav-toggle
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary navigation" data-site-nav>
+        <ul>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#contribute">Contribute</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy fade-up">
+          <p class="eyebrow">Open Knowledge for Academic Communities</p>
+          <h1>BOSC Community Library</h1>
+          <p class="lead">
+            A welcoming digital space for sharing open learning materials,
+            documenting community knowledge, and encouraging collaborative academic growth.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#resources">Explore Resources</a>
+            <a class="button button-secondary" href="#mission">Read the Mission</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel fade-up" aria-label="Project highlights">
+          <h2>Day 1 Foundation</h2>
+          <p>
+            The project begins with a professional repository structure, a clean user interface,
+            and open-source community standards designed for steady, transparent development.
+          </p>
+          <div class="stat-grid">
+            <article class="stat-card">
+              <strong>Open Source</strong>
+              <span>Community-first workflow</span>
+            </article>
+            <article class="stat-card">
+              <strong>Academic</strong>
+              <span>Designed for learning and collaboration</span>
+            </article>
+            <article class="stat-card">
+              <strong>Ready</strong>
+              <span>Prepared for Day 2 feature work</span>
+            </article>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section mission fade-up" id="mission">
+      <div class="container section-grid">
+        <div>
+          <p class="section-label">Mission Statement</p>
+          <h2>Building a reliable open knowledge hub for students and contributors</h2>
+        </div>
+        <div>
+          <p>
+            BOSC Community Library exists to support access to educational resources,
+            encourage responsible open-source participation, and create a collaborative
+            environment where academic communities can share useful knowledge with confidence.
+          </p>
+          <p>
+            This project values clarity, sustainability, accessibility, and practical
+            contribution workflows that help the repository grow responsibly over time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section resources fade-up" id="resources">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Featured Resources</p>
+          <h2>Starter areas that define the platform direction</h2>
+          <p>
+            These featured sections represent the kind of structured content the library
+            will support as development continues in later phases.
+          </p>
+        </div>
+
+        <div class="resource-grid">
+          <article class="resource-card">
+            <h3>Academic Reading Lists</h3>
+            <p>
+              Curated collections of openly available texts, course references,
+              and study materials relevant to university learners.
+            </p>
+          </article>
+
+          <article class="resource-card">
+            <h3>Contributor Guides</h3>
+            <p>
+              Practical onboarding materials that help new contributors understand
+              repository workflow, documentation standards, and project expectations.
+            </p>
+          </article>
+
+          <article class="resource-card">
+            <h3>Community Knowledge Archive</h3>
+            <p>
+              A future space for preserving project notes, event records, and shared
+              insights that strengthen continuity across student teams.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contribute">
+    <div class="container footer-grid fade-up">
+      <div>
+        <h2>Contribute with care</h2>
+        <p>
+          Day 1 establishes the structure. Future work should remain incremental,
+          well documented, and aligned with the open-source standards defined in this repository.
+        </p>
+      </div>
+      <div class="footer-meta">
+        <p><strong>Project:</strong> BOSC Community Library</p>
+        <p><strong>Environment:</strong> XAMPP localhost</p>
+        <p><strong>Status:</strong> Repository foundation complete</p>
+        <p><strong>Year:</strong> <span id="year"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
