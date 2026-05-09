@@ -111,6 +111,8 @@ This section preserves visual evidence captured during actual development activi
 
 ### Day 1 Screenshots
 
+The following authenticated screenshots document key Day 1 milestones in version control, repository hosting, workspace organization, and local execution.
+
 ### Git Commit History
 ![Day 1 Git History](assets/screenshots/day1-git-history.png)
 
