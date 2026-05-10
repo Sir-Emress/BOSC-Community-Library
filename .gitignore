@@ -1,0 +1,31 @@
+# Dependency directories
+node_modules/
+vendor/
+
+# Environment configuration
+.env
+.env.local
+.env.*.local
+
+# IDE settings
+.vscode/
+.idea/
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+.cache/
+
+# XAMPP and local server artifacts
+php_errors.log
+
+# System files
+Thumbs.db
+.DS_Store
+Desktop.ini
