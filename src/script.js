@@ -1,25 +1,165 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const siteNav = document.querySelector("[data-site-nav]");
+const siteHeader = document.querySelector(".site-header");
 const yearElement = document.querySelector("#year");
 const revealItems = document.querySelectorAll(".fade-up");
+const pageAnchorLinks = document.querySelectorAll('a[href^="#"]');
+const siteNavLinks = siteNav ? siteNav.querySelectorAll('a[href^="#"]') : [];
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+function setNavigationState(isOpen) {
+  if (!navToggle || !siteNav) {
+    return;
+  }
+
+  siteNav.classList.toggle("is-open", isOpen);
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+}
+
+function closeNavigationMenu() {
+  setNavigationState(false);
+}
+
+function getAnchorTarget(hash) {
+  if (!hash || !hash.startsWith("#")) {
+    return null;
+  }
+
+  const targetId = decodeURIComponent(hash.slice(1));
+
+  if (!targetId) {
+    return null;
+  }
+
+  return document.getElementById(targetId);
+}
+
+function revealNavigationTarget(target) {
+  if (target.classList.contains("fade-up")) {
+    target.classList.add("is-visible");
+  }
+
+  target.querySelectorAll(".fade-up").forEach((item) => {
+    item.classList.add("is-visible");
+  });
+}
+
+function updateCurrentNavigation(hash) {
+  siteNavLinks.forEach((link) => {
+    if (link.getAttribute("href") === hash) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+}
+
+function scrollToAnchorTarget(target, hash, shouldUpdateHistory = true) {
+  const headerOffset = siteHeader ? siteHeader.offsetHeight + 16 : 16;
+  const targetTop = Math.max(
+    0,
+    window.scrollY + target.getBoundingClientRect().top - headerOffset
+  );
+
+  revealNavigationTarget(target);
+  window.scrollTo({
+    top: targetTop,
+    behavior: prefersReducedMotion.matches ? "auto" : "smooth"
+  });
+
+  if (shouldUpdateHistory) {
+    if (window.location.hash === hash) {
+      history.replaceState(null, "", hash);
+    } else {
+      history.pushState(null, "", hash);
+    }
+  }
+
+  updateCurrentNavigation(hash);
+
+  window.setTimeout(() => {
+    if (typeof target.focus === "function") {
+      target.focus({ preventScroll: true });
+    }
+  }, prefersReducedMotion.matches ? 0 : 220);
+}
 
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
 
+pageAnchorLinks.forEach((link) => {
+  const hash = link.getAttribute("href");
+  const target = getAnchorTarget(hash);
+
+  if (!target) {
+    link.setAttribute("aria-disabled", "true");
+    return;
+  }
+
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    closeNavigationMenu();
+    scrollToAnchorTarget(target, hash);
+  });
+});
+
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
-    const isOpen = siteNav.classList.toggle("is-open");
-    navToggle.setAttribute("aria-expanded", String(isOpen));
+    setNavigationState(!siteNav.classList.contains("is-open"));
   });
 
-  siteNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      siteNav.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
-    });
+  document.addEventListener("click", (event) => {
+    if (!siteNav.classList.contains("is-open")) {
+      return;
+    }
+
+    if (siteNav.contains(event.target) || navToggle.contains(event.target)) {
+      return;
+    }
+
+    closeNavigationMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || !siteNav.classList.contains("is-open")) {
+      return;
+    }
+
+    closeNavigationMenu();
+    navToggle.focus();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760) {
+      closeNavigationMenu();
+    }
   });
 }
+
+const initialTarget = getAnchorTarget(window.location.hash);
+
+if (initialTarget) {
+  window.addEventListener(
+    "load",
+    () => {
+      scrollToAnchorTarget(initialTarget, window.location.hash, false);
+    },
+    { once: true }
+  );
+} else {
+  updateCurrentNavigation(window.location.hash);
+}
+
+window.addEventListener("hashchange", () => {
+  const target = getAnchorTarget(window.location.hash);
+
+  if (target) {
+    revealNavigationTarget(target);
+  }
+
+  updateCurrentNavigation(window.location.hash);
+});
 
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
