@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="page-top-anchor" id="top" tabindex="-1" aria-hidden="true"></div>
+
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top">
@@ -25,6 +27,7 @@
         class="nav-toggle"
         type="button"
         aria-label="Toggle navigation"
+        aria-controls="primary-navigation"
         aria-expanded="false"
         data-nav-toggle
       >
@@ -33,7 +36,12 @@
         <span></span>
       </button>
 
-      <nav class="site-nav" aria-label="Primary navigation" data-site-nav>
+      <nav
+        class="site-nav"
+        id="primary-navigation"
+        aria-label="Primary navigation"
+        data-site-nav
+      >
         <ul>
           <li><a href="#mission">Mission</a></li>
           <li><a href="#resources">Resources</a></li>
@@ -43,7 +51,7 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="main-content" tabindex="-1">
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy fade-up">
@@ -83,11 +91,16 @@
       </div>
     </section>
 
-    <section class="section mission fade-up" id="mission">
+    <section
+      class="section mission fade-up"
+      id="mission"
+      tabindex="-1"
+      aria-labelledby="mission-heading"
+    >
       <div class="container section-grid">
         <div>
           <p class="section-label">Mission Statement</p>
-          <h2>Building a reliable open knowledge hub for students and contributors</h2>
+          <h2 id="mission-heading">Building a reliable open knowledge hub for students and contributors</h2>
         </div>
         <div>
           <p>
@@ -103,11 +116,16 @@
       </div>
     </section>
 
-    <section class="section resources fade-up" id="resources">
+    <section
+      class="section resources fade-up"
+      id="resources"
+      tabindex="-1"
+      aria-labelledby="resources-heading"
+    >
       <div class="container">
         <div class="section-heading">
           <p class="section-label">Featured Resources</p>
-          <h2>Starter areas that define the platform direction</h2>
+          <h2 id="resources-heading">Starter areas that define the platform direction</h2>
           <p>
             These featured sections represent the kind of structured content the library
             will support as development continues in later phases.
@@ -143,10 +161,15 @@
     </section>
   </main>
 
-  <footer class="site-footer" id="contribute">
+  <footer
+    class="site-footer"
+    id="contribute"
+    tabindex="-1"
+    aria-labelledby="contribute-heading"
+  >
     <div class="container footer-grid fade-up">
       <div>
-        <h2>Contribute with care</h2>
+        <h2 id="contribute-heading">Contribute with care</h2>
         <p>
           Day 1 establishes the structure. Future work should remain incremental,
           well documented, and aligned with the open-source standards defined in this repository.
