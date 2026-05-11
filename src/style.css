@@ -337,7 +337,7 @@ p {
 
 .section-heading {
   max-width: 62ch;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.4rem;
 }
 
 .resource-grid {
@@ -401,9 +401,13 @@ p {
 @media (max-width: 900px) {
   .hero-grid,
   .section-grid,
-  .footer-grid,
-  .resource-grid {
+  .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .resource-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
   }
 
   .hero-copy,
@@ -449,6 +453,24 @@ p {
   .site-nav ul {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .resource-card {
+    padding: 1.2rem;
+  }
+
+  .mission,
+  .resources {
+    padding: 1.6rem;
+  }
+
+  .section-heading {
+    margin-bottom: 1.4rem;
   }
 }
 
