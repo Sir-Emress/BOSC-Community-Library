@@ -281,24 +281,24 @@ p {
   transform: translateY(0);
 }
 
-.button-primary:active {
-  box-shadow: 0 8px 16px rgba(171, 95, 44, 0.28);
-}
-
-.button-secondary:active {
-  background: rgba(245, 240, 225, 0.95);
-}
-
 .button-primary {
   background: linear-gradient(135deg, var(--accent), #cb8147);
   color: #fffdf8;
   box-shadow: 0 12px 24px rgba(171, 95, 44, 0.22);
 }
 
+.button-primary:active {
+  box-shadow: 0 8px 16px rgba(171, 95, 44, 0.28);
+}
+
 .button-secondary {
   border: 1px solid var(--line);
   background: rgba(255, 250, 241, 0.9);
   color: var(--ink);
+}
+
+.button-secondary:active {
+  background: rgba(245, 240, 225, 0.95);
 }
 
 .hero-panel {
