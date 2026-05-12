@@ -437,8 +437,19 @@ p {
   background: var(--surface-strong);
   border: 1px solid var(--line);
   box-shadow: 0 12px 26px rgba(23, 50, 58, 0.08);
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition: all 200ms ease;
   -webkit-tap-highlight-color: transparent;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 36px rgba(23, 50, 58, 0.14);
+  border-color: rgba(171, 95, 44, 0.25);
+}
+
+.resource-card:active {
+  transform: scale(0.98);
+  box-shadow: 0 8px 16px rgba(23, 50, 58, 0.1);
 }
 
 .resource-category {
