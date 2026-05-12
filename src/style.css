@@ -289,6 +289,12 @@ p {
 
 .button-primary:active {
   box-shadow: 0 8px 16px rgba(171, 95, 44, 0.28);
+  transform: translateY(0);
+}
+
+.button-secondary:active {
+  background: rgba(245, 240, 225, 0.95);
+  transform: translateY(0);
 }
 
 .button-secondary {
