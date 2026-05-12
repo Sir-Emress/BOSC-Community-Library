@@ -54,13 +54,14 @@ This document serves as the official academic audit log for the `BOSC-Community-
 - Issues or pull requests linked: Issue #2 closed through pull request #7; squash merge commit `771faf6`
 - Screenshots captured: Branch synchronization complete, PR created, merged, and issue closed; mobile touch interaction refinements applied
 
-### Day 5 - Feature Enhancements (TO BE UPDATED)
+### Day 5 - Feature Enhancements (COMPLETED)
 
-- Planned focus: Feature enhancements
-- Daily activity summary: TO BE UPDATED
-- Git commits recorded: TO BE UPDATED
-- Issues or pull requests linked: TO BE UPDATED
-- Screenshots captured: TO BE UPDATED
+- Date recorded: `2026-05-12`
+- Planned focus: Feature enhancements for searchable resource filtering
+- Daily activity summary: Implemented live searchable filtering system for Issue #3, including responsive search input, real-time frontend filtering, dynamic resource visibility updates, and no-results feedback message. Created PR #8, added peer review comment, and squash-merged the changes into main. Branch deleted after successful merge.
+- Git commits recorded: `77afa39` - Add searchable resource filtering interface; `e198913` - Implement live frontend resource filtering system
+- Issues or pull requests linked: Issue #3 closed through pull request #8; squash merge commit `ef51b94`
+- Screenshots captured: PR created, merged, and issue closed; search UI functional and tested
 
 ### Day 6 - Refactoring and Sustainability Updates (TO BE UPDATED)
 
@@ -106,12 +107,13 @@ Record commits exactly as shown in Git history. Preserve commit hashes, dates, a
 - `b69ea58` - `2026-05-11` - Fix responsive resource card layout behavior
 - `65511a9` - `2026-05-11` - Improve mobile spacing and responsive card readability
 - `771faf6` - `2026-05-11` - Fix incorrect resource card rendering on smaller screens (#7)
-- `174fdb1` - `2026-05-11` - Improve mobile touch interaction feedback for resource cards
-- `0424ea7` - `2026-05-11` - Improve mobile touch interaction feedback for resource cards (refinement)
+- `c2d204b` - `2026-05-11` - Improve mobile touch interaction feedback for resource cards
 
-### Day 5 Git Commits (TO BE UPDATED)
+### Day 5 Git Commits (ISSUE 3 COMPLETED)
 
-- TO BE UPDATED
+- `77afa39` - `2026-05-12` - Add searchable resource filtering interface
+- `e198913` - `2026-05-12` - Implement live frontend resource filtering system
+- `ef51b94` - `2026-05-12` - Add searchable resource filtering system (#8)
 
 ### Day 6 Git Commits (TO BE UPDATED)
 
