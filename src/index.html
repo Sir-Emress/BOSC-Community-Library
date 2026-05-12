@@ -132,18 +132,29 @@
           </p>
         </div>
 
-        <div class="search-wrapper">
-          <input
-            type="search"
-            id="resource-search"
-            class="search-input"
-            placeholder="Search resources..."
-            aria-label="Search resources"
-          >
+        <div class="resource-controls">
+          <div class="search-wrapper">
+            <input
+              type="search"
+              id="resource-search"
+              class="search-input"
+              placeholder="Search resources..."
+              aria-label="Search resources"
+            >
+          </div>
+
+          <div class="category-filters" role="tablist" aria-label="Resource categories">
+            <button class="category-btn" data-category="all" aria-pressed="true">All</button>
+            <button class="category-btn" data-category="books">Books</button>
+            <button class="category-btn" data-category="research">Research</button>
+            <button class="category-btn" data-category="tutorials">Tutorials</button>
+            <button class="category-btn" data-category="guides">Guides</button>
+          </div>
         </div>
 
         <div class="resource-grid" data-resource-grid>
-          <article class="resource-card" data-resource-card>
+          <article class="resource-card" data-resource-card data-category="books">
+            <span class="resource-category">Books</span>
             <h3>Academic Reading Lists</h3>
             <p>
               Curated collections of openly available texts, course references,
@@ -151,7 +162,8 @@
             </p>
           </article>
 
-          <article class="resource-card" data-resource-card>
+          <article class="resource-card" data-resource-card data-category="guides">
+            <span class="resource-category">Guides</span>
             <h3>Contributor Guides</h3>
             <p>
               Practical onboarding materials that help new contributors understand
@@ -159,7 +171,8 @@
             </p>
           </article>
 
-          <article class="resource-card" data-resource-card>
+          <article class="resource-card" data-resource-card data-category="research">
+            <span class="resource-category">Research</span>
             <h3>Community Knowledge Archive</h3>
             <p>
               A future space for preserving project notes, event records, and shared
