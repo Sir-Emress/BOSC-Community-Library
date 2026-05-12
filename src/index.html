@@ -132,8 +132,18 @@
           </p>
         </div>
 
-        <div class="resource-grid">
-          <article class="resource-card">
+        <div class="search-wrapper">
+          <input
+            type="search"
+            id="resource-search"
+            class="search-input"
+            placeholder="Search resources..."
+            aria-label="Search resources"
+          >
+        </div>
+
+        <div class="resource-grid" data-resource-grid>
+          <article class="resource-card" data-resource-card>
             <h3>Academic Reading Lists</h3>
             <p>
               Curated collections of openly available texts, course references,
@@ -141,7 +151,7 @@
             </p>
           </article>
 
-          <article class="resource-card">
+          <article class="resource-card" data-resource-card>
             <h3>Contributor Guides</h3>
             <p>
               Practical onboarding materials that help new contributors understand
@@ -149,7 +159,7 @@
             </p>
           </article>
 
-          <article class="resource-card">
+          <article class="resource-card" data-resource-card>
             <h3>Community Knowledge Archive</h3>
             <p>
               A future space for preserving project notes, event records, and shared
@@ -157,6 +167,10 @@
             </p>
           </article>
         </div>
+
+        <p class="no-results-message" data-no-results hidden>
+          No resources found matching your search.
+        </p>
       </div>
     </section>
   </main>
