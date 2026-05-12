@@ -6,6 +6,10 @@ const revealItems = document.querySelectorAll(".fade-up");
 const pageAnchorLinks = document.querySelectorAll('a[href^="#"]');
 const siteNavLinks = siteNav ? siteNav.querySelectorAll('a[href^="#"]') : [];
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const searchInput = document.querySelector("#resource-search");
+const resourceGrid = document.querySelector("[data-resource-grid]");
+const resourceCards = document.querySelectorAll("[data-resource-card]");
+const noResultsMessage = document.querySelector("[data-no-results]");
 
 function setNavigationState(isOpen) {
   if (!navToggle || !siteNav) {
@@ -179,4 +183,30 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((item) => observer.observe(item));
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
+}
+
+function filterResources() {
+  const searchTerm = searchInput.value.toLowerCase().trim();
+  let visibleCount = 0;
+
+  resourceCards.forEach((card) => {
+    const title = card.querySelector("h3")?.textContent?.toLowerCase() || "";
+    const description = card.querySelector("p")?.textContent?.toLowerCase() || "";
+    const matches = title.includes(searchTerm) || description.includes(searchTerm);
+
+    if (matches) {
+      card.style.display = "";
+      visibleCount++;
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  if (noResultsMessage) {
+    noResultsMessage.hidden = visibleCount > 0;
+  }
+}
+
+if (searchInput) {
+  searchInput.addEventListener("input", filterResources);
 }
