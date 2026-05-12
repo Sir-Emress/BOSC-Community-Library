@@ -63,13 +63,14 @@ This document serves as the official academic audit log for the `BOSC-Community-
 - Issues or pull requests linked: Issue #3 closed through pull request #8; squash merge commit `ef51b94`
 - Screenshots captured: PR created, merged, and issue closed; search UI functional and tested
 
-### Day 6 - Refactoring and Sustainability Updates (TO BE UPDATED)
+### Day 6 - Refactoring and Sustainability Updates (COMPLETED)
 
+- Date recorded: `2026-05-12`
 - Planned focus: Refactoring and sustainability updates
-- Daily activity summary: TO BE UPDATED
-- Git commits recorded: TO BE UPDATED
-- Issues or pull requests linked: TO BE UPDATED
-- Screenshots captured: TO BE UPDATED
+- Daily activity summary: Implemented categorized resource browsing for Issue #4 and completed a comprehensive frontend modernization and architecture refactor for Issue #5. This included introducing a state-based filtering engine, modernizing the UI with academic design principles, and optimizing CSS/JS for better maintainability. Enhanced accessibility through better focus states and semantic HTML.
+- Git commits recorded: `e358fa9` - Add categorized resource browsing system; `bcec0b9` - Improve responsive frontend interface and resource filtering; `45c1bf3` - Refactor frontend architecture and optimize UI consistency; `736a011` - Polish accessibility and interaction behavior
+- Issues or pull requests linked: Issue #4 and Issue #5 closed through pull request #9; squash merge commit `f4bb520`
+- Screenshots captured: `day6-pr-issue4-5.png`, `day6-modernized-homepage.png`, `day6-category-filter-ui.png`, `day6-search-category-combo.png`
 
 ### Day 7 - Final Submission Audit and Reflection (TO BE UPDATED)
 
@@ -115,9 +116,13 @@ Record commits exactly as shown in Git history. Preserve commit hashes, dates, a
 - `e198913` - `2026-05-12` - Implement live frontend resource filtering system
 - `ef51b94` - `2026-05-12` - Add searchable resource filtering system (#8)
 
-### Day 6 Git Commits (TO BE UPDATED)
+### Day 6 Git Commits (ISSUES 4 & 5 COMPLETED)
 
-- TO BE UPDATED
+- `e358fa9` - `2026-05-12` - Add categorized resource browsing system
+- `bcec0b9` - `2026-05-12` - Improve responsive frontend interface and resource filtering
+- `45c1bf3` - `2026-05-12` - Refactor frontend architecture and optimize UI consistency
+- `736a011` - `2026-05-12` - Polish accessibility and interaction behavior
+- `f4bb520` - `2026-05-12` - Enhance categorized browsing and modernize frontend architecture (#9)
 
 ### Day 7 Git Commits (TO BE UPDATED)
 
