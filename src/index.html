@@ -68,10 +68,10 @@
         </div>
 
         <aside class="hero-panel fade-up" aria-label="Project highlights">
-          <h2>Day 1 Foundation</h2>
+          <h2>BOSC Community Library</h2>
           <p>
-            The project begins with a professional repository structure, a clean user interface,
-            and open-source community standards designed for steady, transparent development.
+            An open-source digital library platform for sharing academic resources,
+            community knowledge, and collaborative learning materials.
           </p>
           <div class="stat-grid">
             <article class="stat-card">
@@ -83,8 +83,8 @@
               <span>Designed for learning and collaboration</span>
             </article>
             <article class="stat-card">
-              <strong>Ready</strong>
-              <span>Prepared for Day 2 feature work</span>
+              <strong>Day 6</strong>
+              <span>Frontend enhancement complete</span>
             </article>
           </div>
         </aside>
@@ -132,18 +132,29 @@
           </p>
         </div>
 
-        <div class="search-wrapper">
-          <input
-            type="search"
-            id="resource-search"
-            class="search-input"
-            placeholder="Search resources..."
-            aria-label="Search resources"
-          >
+        <div class="resource-controls">
+          <div class="search-wrapper">
+            <input
+              type="search"
+              id="resource-search"
+              class="search-input"
+              placeholder="Search resources..."
+              aria-label="Search resources"
+            >
+          </div>
+
+          <div class="category-filters" role="tablist" aria-label="Resource categories">
+            <button class="category-btn" data-category="all" aria-pressed="true">All</button>
+            <button class="category-btn" data-category="books">Books</button>
+            <button class="category-btn" data-category="research">Research</button>
+            <button class="category-btn" data-category="tutorials">Tutorials</button>
+            <button class="category-btn" data-category="guides">Guides</button>
+          </div>
         </div>
 
         <div class="resource-grid" data-resource-grid>
-          <article class="resource-card" data-resource-card>
+          <article class="resource-card" data-resource-card data-category="books">
+            <span class="resource-category">Books</span>
             <h3>Academic Reading Lists</h3>
             <p>
               Curated collections of openly available texts, course references,
@@ -151,7 +162,8 @@
             </p>
           </article>
 
-          <article class="resource-card" data-resource-card>
+          <article class="resource-card" data-resource-card data-category="guides">
+            <span class="resource-category">Guides</span>
             <h3>Contributor Guides</h3>
             <p>
               Practical onboarding materials that help new contributors understand
@@ -159,7 +171,8 @@
             </p>
           </article>
 
-          <article class="resource-card" data-resource-card>
+          <article class="resource-card" data-resource-card data-category="research">
+            <span class="resource-category">Research</span>
             <h3>Community Knowledge Archive</h3>
             <p>
               A future space for preserving project notes, event records, and shared
@@ -185,14 +198,15 @@
       <div>
         <h2 id="contribute-heading">Contribute with care</h2>
         <p>
-          Day 1 establishes the structure. Future work should remain incremental,
-          well documented, and aligned with the open-source standards defined in this repository.
+          The BOSC Community Library thrives on collaborative development.
+          Every contribution helps build a more accessible resource platform
+          for academic communities worldwide.
         </p>
       </div>
       <div class="footer-meta">
         <p><strong>Project:</strong> BOSC Community Library</p>
-        <p><strong>Environment:</strong> XAMPP localhost</p>
-        <p><strong>Status:</strong> Repository foundation complete</p>
+        <p><strong>Status:</strong> Frontend enhancement complete</p>
+        <p><strong>License:</strong> MIT Open Source</p>
         <p><strong>Year:</strong> <span id="year"></span></p>
       </div>
     </div>

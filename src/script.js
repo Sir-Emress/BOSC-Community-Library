@@ -10,6 +10,9 @@ const searchInput = document.querySelector("#resource-search");
 const resourceGrid = document.querySelector("[data-resource-grid]");
 const resourceCards = document.querySelectorAll("[data-resource-card]");
 const noResultsMessage = document.querySelector("[data-no-results]");
+const categoryButtons = document.querySelectorAll(".category-btn");
+
+let activeCategory = "all";
 
 function setNavigationState(isOpen) {
   if (!navToggle || !siteNav) {
@@ -192,9 +195,11 @@ function filterResources() {
   resourceCards.forEach((card) => {
     const title = card.querySelector("h3")?.textContent?.toLowerCase() || "";
     const description = card.querySelector("p")?.textContent?.toLowerCase() || "";
-    const matches = title.includes(searchTerm) || description.includes(searchTerm);
+    const category = card.getAttribute("data-category") || "";
+    const searchMatches = title.includes(searchTerm) || description.includes(searchTerm);
+    const categoryMatches = activeCategory === "all" || category === activeCategory;
 
-    if (matches) {
+    if (searchMatches && categoryMatches) {
       card.style.display = "";
       visibleCount++;
     } else {
@@ -207,6 +212,22 @@ function filterResources() {
   }
 }
 
+function setActiveCategory(category) {
+  activeCategory = category;
+  categoryButtons.forEach((btn) => {
+    const btnCategory = btn.getAttribute("data-category");
+    btn.setAttribute("aria-pressed", btnCategory === category);
+  });
+  filterResources();
+}
+
 if (searchInput) {
   searchInput.addEventListener("input", filterResources);
 }
+
+categoryButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const category = button.getAttribute("data-category");
+    setActiveCategory(category);
+  });
+});
